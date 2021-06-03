@@ -1,0 +1,146 @@
+{% extends 'SHCOOL/base.html' %}
+ {% load static %}
+
+ {% block content %}
+ <!-- Page breadcrumb -->
+ <section style="background-color: orange;" id="mu-page-breadcrumb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-page-breadcrumb-area">
+          <h2>Our Services</h2>
+          <ol class="breadcrumb">
+           <li><a href="{% url 'SHCOOL:OverListView' %}">Home</a></li>            
+           <li class="active" style="color: white;">Services</li>
+         </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><br><br>
+<!-- End breadcrumb -->
+<div style="background-color: rgba(211,211,211,0.3);" class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <p>Matrix Security company offers independent security services that include complete security services to industrial, commercial real estates, hospitals, business schools, NGOs, Farms, malls etc. We are supposed to build a long lasting relationship with our clients.</p>
+      <h3>Our services include:</h3>
+                  
+                    <li>Security systems installations</li>
+                    <li>Manned security services</li>
+                    <li>Events security</li>
+                    <li>Executive VIP protection</li>
+                    <li>Alarm response</li>
+                    <li>Investigations</li>
+                    <li>Fleet management</li>
+                    <li>Dog services (K9)</li>
+                    <br>
+
+      <h3>Product and Services</h3>
+      <p>We offer solutions for your family and business, through provision of innovative strategies that help in securing as a leading security service industry with a legacy of providing high quality security to our clients.</p>
+                 
+    
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+
+
+<div style="background-color: rgba(211,211,211,0.3);" class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <p>Matrix Security company is mandated to provide world class security to our clients, including malls, schools, hotels and agencies in order to meet their business needs effectively.</p>
+      <h3>Our objectives are as listed bellow.</h3>
+                  
+                    <li>To build a strong relationship with our clients.</li>
+                    <li>To recruit qualified guards that are capable of delivering quality services.</li>
+                    <li>To secure businesses and homes.</li>
+                    <li>To provide rapid response to security incidents.</li>
+                 
+    
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
+
+ <section id="mu-course-content">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="mu-course-content-area">
+            <div class="row">
+              <div class="col-md-9">
+                <!-- start course content container -->
+                <div class="mu-course-container">
+                  <div class="row"> 
+                    {% for service in services %}                 
+                  <div class="col-md-6 col-sm-6">
+                    <div class="mu-latest-course-single">
+                      <figure class="mu-latest-course-img">
+                        <a href="#"><img src="{{service.Service_Photo.url}}" alt="img"></a>
+                        <figcaption class="mu-latest-course-imgcaption">
+                          <a href="#">{{service.Service_Title}}</a>
+                          <span><i class="fa fa-clock-o"></i></span>
+                        </figcaption>
+                      </figure>
+                      <div class="mu-latest-course-single-content">
+                        
+                        <div class="mu-latest-course-single-contbottom">
+                        </div>
+                        <p>{{service.Service_Description}}</p>
+                      </div>
+                    </div>
+                  </div>                 
+                  {% endfor %}
+                  </div>
+                </div>
+                <!-- end course content container -->
+                
+              </div>
+              <div class="col-md-3">
+                <!-- start sidebar -->
+                <aside class="mu-sidebar">
+                  <!-- start single sidebar -->
+                  <div class="mu-single-sidebar">
+                    <h3>Our Mission</h3>
+                    <ul class="mu-sidebar-catg">
+                      <li><a>
+                        To be leading security service provider whose ultimate goal is to provide the best and innovative security solutions to our clients in our technologically evolving world.
+                      </a></li>
+                      
+                    </ul>
+                  </div>
+                  <!-- end single sidebar -->
+                  <!-- start single sidebar -->
+                  <div class="mu-single-sidebar">
+                    <h3>Our Vision</h3>
+                    <ul class="mu-sidebar-catg">
+                      <li><a>
+                        To provide world-class security to our clients through provision of innovative security services.
+                      </a></li>
+                      
+                    </ul>
+                  </div>
+                  <!-- end single sidebar -->
+                  <!-- start single sidebar -->
+                  <div class="mu-single-sidebar">
+                    <h3>Our Core Values</h3>
+                    <ul class="mu-sidebar-catg mu-sidebar-archives">
+                      <li><a>Honesty</a></li>
+                      <li><a >Responsibility</a></li>
+                      <li><a >Transparency</a></li>
+                      <li><a >Accountability</a></li>
+                      <li><a >Integrity</a></li>
+                    </ul>
+                  </div>
+                  <!-- end single sidebar -->
+                </aside>
+                <!-- / end sidebar -->
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ {% endblock %}

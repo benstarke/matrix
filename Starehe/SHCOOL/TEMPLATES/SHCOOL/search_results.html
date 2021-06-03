@@ -1,0 +1,20 @@
+{% extends 'SHCOOL/base.html' %}
+
+{% block content %}
+
+<div style="height: 50%;">
+
+{% if search %}
+
+{% for career in search %}
+<h1>{{career.Title}} Available</h1>
+{% endfor %}
+ 
+{% else %}
+  <h1>Search Keyword not available!!</h1>
+{% endif %}
+
+</div>
+
+{% endblock %}
+

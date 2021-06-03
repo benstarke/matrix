@@ -1,0 +1,81 @@
+{% extends 'SHCOOL/base.html' %}
+ {% load static %}
+
+ {% block content %}
+
+<!-- Start about us -->
+<!-- Page breadcrumb -->
+<section style="background-color: orange;" id="mu-page-breadcrumb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-page-breadcrumb-area">
+          <h2>About</h2>
+          <ol class="breadcrumb">
+           <li><a href="{% url 'SHCOOL:OverListView' %}">Home</a></li>            
+           <li class="active">About</li>
+         </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End breadcrumb -->
+<section id="mu-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-about-us-area">           
+            <div class="row">
+              <div class="col-lg-6 col-md-6">
+                <div class="mu-about-us-left">
+                  <!-- Start Title -->
+                  <div class="mu-title">
+                    <h2>About Us</h2>              
+                  </div>
+                  <!-- End Title -->
+              
+                  <p> The company is mandated to provide world class security to our clients who include companies, malls, schools, hotels and agencies in order to meet their business needs effectively. Our objective is to curb insecurity, offer quality security services in a highly competitive security market. We as a company are aied to provide guard services, dog services, electric fencing and high technology based surveillance systems, private investigations and security consultancy works.</p>
+                 
+                  <p>Matrix security company also specializes in providing effective local support by providing high class security solutions and complete system integration</p>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="mu-about-us-right">                            
+                <a id="mu-abtus-video" href="https://www.youtube.com/embed/OKay-ouLqm0" target="mutube-video">
+                  <img src="{% static 'MyPhotos/bb.jpeg' %}" alt="img">
+                </a>                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End about us -->
+
+
+  
+	<!-- section -->
+    <div class="section layout_padding">
+        <div class="container">
+          <center><h2><span>OUR </span>EXECUTIVE TEAM</h2></center>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+    {% for image in executive %}
+				<div class="col-md-4">
+          <div class="full blog_img_popular">
+                       <img class="img-responsive" src="{{image.E_Photo.url}}" alt="#" /> 
+					   <h4>{{image.E_Title}}</h4>
+          </div>
+         </div>
+	{% endfor %}
+            </div>
+        </div>
+    </div>
+	<!-- end section -->
+
+ {% endblock %}
+ 
